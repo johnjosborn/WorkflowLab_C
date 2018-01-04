@@ -1,0 +1,618 @@
+@charset "ISO-8859-1";
+
+body{
+    background: #666;
+    background-image: url('../media/background1.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: bottom; 
+    background-size:100% auto;
+}
+
+textarea{
+    width: 96%;
+    height: 100%;
+    padding: .2em;
+    margin: .2em 0 0 0;
+    background: #fff;
+}
+
+.content{
+   overflow: hidden;
+   height: 88%;
+   font-family: 'Open Sans Condensed', sans-serif;
+}
+
+/* REUSABLE BASIC STYLING */
+
+.minHeight{
+    min-height: 1.5em;
+}
+
+/* EDITING STYLING */
+
+.inputField{
+    font-size: 1em;
+    display: inline-block;
+    height: 90%;
+    width: 80%;
+    margin: 0 .5em;
+    padding: .2em .5em;
+    background: #FFFFFF;
+}
+
+.inputField2{
+    font-size: 1em;
+    display: inline-block;
+    height: 90%;
+    width: 60%;
+    margin: 0 .5em;
+    padding: .2em .5em;
+    background: #FFFFFF;
+}
+
+.detModLabel{
+    font-size: .8em;
+    background: #531414;
+    color: white;
+    float: left;
+    width: 10%;
+    height: 100%;
+    margin: 0;
+    padding: .2em .5em;
+    border: 1px solid gray;
+}
+
+
+.dataInputDiv{
+    font-size: 1em;
+    padding: .2em .4em;
+    background-color: #ccc;
+    margin: 0 0 .25em 0;
+}
+
+
+.inputTitle{
+    display: inline-block;
+    font-size: 1em;
+    height: 100%;
+    margin: 0;
+    padding: .2em .5em;
+    background: #FFF;
+}
+
+.buttonBar{
+    font-size: 2em;
+}
+
+.containHeader{
+    border: 2px solid gray;
+    border-radius: 5px 5px 0 0;
+    font-size: 1.1em;
+    text-align: center;
+    padding: .2em .5em;
+    background: #000000;
+    color: white;
+    position: relative;
+}
+
+.opsSubheader{
+    font-size: .8em;
+    text-align: right;
+    padding: .25em;
+    color: #05375B;
+    border:none;
+}
+
+.container{
+    border: 2px solid gray;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    margin: 0;
+    padding: .5em;
+    font-size: 1em;
+    background: #ccc;
+    clear: both;
+}
+
+.container2{
+    border: none;
+    margin: 0;
+    padding: 0;
+    background: none;
+    display: inline;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.centeredDiv{
+    text-align: center;
+}
+
+.stepsTitle{
+    display: inline;
+}
+
+.container2 button{
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 1em;
+    margin: 0 1em;
+    padding: .1em .2em;
+}
+
+/* DIV STYLING */
+.leftDiv{
+    float: left;
+    width: 40%;
+    height: 100%;
+}
+
+.rightDiv{
+    float: right;
+    width: 55%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.scrollable{
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 85%;
+}
+
+#functionSelectBar{
+    margin: 0 8% 1% 8%;
+    padding: 1% 2%;
+    height: 5%;
+}
+
+
+.functions{
+    margin: 0 8%;
+    padding: 1% 2%;
+    height: 5%; 
+}
+
+/* 
+#workflowContent{
+    border: 1px solid #666;
+    border-radius: 5px;
+    margin: 0 8%;
+    padding: 1% 2%; 
+    height: 85%;
+    background: #fff;
+} */
+
+#workflowContent{
+    border: 1px solid #000;
+    border-radius: 5px;
+    margin: 0 8%;
+    padding: 1% 2%; 
+    height: 82%;
+    background: #FFFFFF;
+    /* background-image: -webkit-linear-gradient(top, #9B9B9B,  #3971FF);
+    background-image: -moz-linear-gradient(top, #9B9B9B,  #747474);
+    background-image: -ms-linear-gradient(top, #9B9B9B,  #747474);
+    background-image: -o-linear-gradient(top, #9B9B9B,  #747474);
+    background-image: linear-gradient(to bottom, #FFFFFF,  #DDD); */
+}
+
+.wfList{
+    float: right;
+    font-size: 1.1em;
+    border: 1px solid gray;
+    background: #3F91FF;
+    border-radius: 5px;
+    color: white;
+    padding: .3em .5em;
+}
+
+select{
+    font-size: 1em;
+}
+
+.titleDiv{
+    font-size: 1.75em;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 .5em 0 0;
+    padding: .2em 0 0 0;
+    color: white;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.labelDiv{
+    font-size: 1em;
+    background-color: #546EBE;
+    border-radius: 5px 5px 0 0;
+    color: #fff;
+    padding: .2em .5em;
+}
+
+.dataDiv{
+    font-size: 1em;
+    padding: .2em .5em;
+    background-color: #eee;
+    margin: 0 0 .5em 0;
+}
+
+.compDiv{
+    background: #7cd85b;;
+    white-space: nowrap;
+    height: 100%;
+    text-align: left;
+    margin: 0;
+}
+
+/* DETAIL STYLING */
+
+.detLabel{
+    font-size: .8em;
+    background: #531414;
+    color: white;
+    display: inline-block;
+    margin: 0;
+    padding: .2em .5em;
+    border: 1px solid gray;
+}
+.detData{
+    font-size: 1em;
+    padding: .2em .5em;
+    border-left: 1px solid gray;
+    border-bottom: 1px solid gray;
+    margin: 0 0 .25em 0;
+    background: #eee;
+}
+
+.orderBox{
+    display: inline-block;
+    width: 3em;
+    text-align: center;
+}
+
+.titleBox{
+    display: inline;
+}
+
+.buttonUndo{
+    margin: .5em 1em;
+    background: #575757;
+    background-image: -webkit-linear-gradient(top, #747474, #575757 );
+    background-image: -moz-linear-gradient(top, #747474, #575757 );
+    background-image: -ms-linear-gradient(top, #747474, #575757 );
+    background-image: -o-linear-gradient(top, #747474, #575757 );
+    background-image: linear-gradient(to bottom, #747474, #575757 );
+    -webkit-border-radius: 6;
+    -moz-border-radius: 6;
+    border-radius: 3px;
+    color: #ffffff;
+    font-size: 1em;
+    padding: .25em .5em;
+    text-decoration: none;
+}
+
+.buttonUndo:hover{
+    background: #747474;
+    background-image: -webkit-linear-gradient(top, #9B9B9B,  #747474);
+    background-image: -moz-linear-gradient(top, #9B9B9B,  #747474);
+    background-image: -ms-linear-gradient(top, #9B9B9B,  #747474);
+    background-image: -o-linear-gradient(top, #9B9B9B,  #747474);
+    background-image: linear-gradient(to bottom, #9B9B9B,  #747474);
+    text-decoration: none;    
+}
+
+.buttonSave{
+    margin: .5em 1em;
+    background: #F33434;
+    background-image: -webkit-linear-gradient(top, #F33434, #FF1616 );
+    background-image: -moz-linear-gradient(top, #F33434, #FF1616 );
+    background-image: -ms-linear-gradient(top, #F33434, #FF1616 );
+    background-image: -o-linear-gradient(top, #F33434, #FF1616 );
+    background-image: linear-gradient(to bottom, #F33434, #FF1616 );
+    -webkit-border-radius: 6;
+    -moz-border-radius: 6;
+    border-radius: 3px;
+    color: #ffffff;
+    font-size: 1em;
+    padding: .25em .5em;
+    text-decoration: none;
+}
+
+.buttonSave:hover{
+    background: #FE5B5B;
+    background-image: -webkit-linear-gradient(top,  #FF8F8F,  #FE5B5B);
+    background-image: -moz-linear-gradient(top, #FF8F8F,  #FE5B5B);
+    background-image: -ms-linear-gradient(top, #FF8F8F,  #FE5B5B);
+    background-image: -o-linear-gradient(top, #FF8F8F,  #FE5B5B);
+    background-image: linear-gradient(to bottom, #FF8F8F,  #FE5B5B);
+    text-decoration: none;    
+}
+
+.button1{
+    margin: .5em 1em;
+    background: #3498db;
+    background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+    background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+    background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+    background-image: -o-linear-gradient(top, #3498db, #2980b9);
+    background-image: linear-gradient(to bottom, #3498db, #2980b9);
+    -webkit-border-radius: 6;
+    -moz-border-radius: 6;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: .5em;
+    padding: .5em .5em;
+    text-decoration: none;
+}
+
+.button1:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+.addButton{
+    font-size: .8em;
+    float: right;
+}
+
+/* TABLES */
+
+
+.wfTable{
+    margin: 1em auto;
+    background: white;
+    width: 90%;
+    cursor: pointer;
+    padding: .4em;
+}
+
+.wfTable td{
+    padding: .2em .5em;
+}
+
+.wfTable td.compHolder{
+    padding: 0;
+}
+
+.wfTable tbody tr{
+    border-bottom: 2px solid gray;
+}
+
+.wfTable tbody tr:nth-child(even){
+    background-color: #BFD6FF;
+}
+
+.wfTable thead tr:nth-child(even){
+    background-color: #333;
+    color: #fff;
+}
+
+.wfTable tbody tr:hover{
+    background-color: #F8B951;
+    font-weight: bold;
+}
+
+.tableHeader{
+    width: 100%;
+    margin: 0 auto;
+}
+
+.tableHeader th{
+    text-align: center;
+}
+
+.tableHeader td{
+    text-align: left;
+}
+
+.opTable{
+    margin: 1em auto;
+    background: white;
+    width: 90%;
+    cursor: pointer;
+}
+
+.opTable tr{
+    border-bottom: 2px solid gray;
+}
+
+.opTable tbody tr:nth-child(even){
+    background-color: #BFD6FF;
+}
+
+.opTable thead tr:nth-child(even){
+    background-color: #333;
+    color: #fff;
+}
+
+.opTable tbody tr:hover{
+    background-color: #F8B951;
+    font-weight: bold;
+}
+
+.opHolder{
+    background: white;
+    width: 100%;
+    padding: .5em;
+}
+
+/* TABLE SORTABLE */
+
+table.tablesorter thead tr .header {
+	background-image: url(../media/bg.gif);
+	background-repeat: no-repeat;
+	background-position: center right;
+	cursor: pointer;
+}
+
+table.tablesorter thead tr .headerSortUp {
+	background-image: url(../media/asc.gif);
+	background-color: #4B8DFE;
+}
+table.tablesorter thead tr .headerSortDown {
+	background-image: url(../media/desc.gif);
+	background-color: #4B8DFE;
+}
+
+
+/* STATUS STYLING */
+
+.stepOpen{
+   background-color: #2969d1;
+   color: white; 
+}
+
+.stepPending{
+   background-color: #999;
+   color: black; 
+}
+
+.stepComplete{
+   background-color: #7cd85b;
+   color: black; 
+}
+
+.stepDelete{
+    background-color: #E66666;
+    color: black;   
+}
+
+/* RADIO BUTTONS */
+.modButtons .ui-checkboxradio-checked{
+    background-color: #A261FE;
+}
+
+.modButtons .ui-checkboxradio-checked:hover{
+    background-color: #BD8FFF;
+}
+
+.headerItems{
+    position: relative;
+    display: inline-block; 
+}
+
+.selectRadio{
+    width: 80%;
+    margin: .2em 5%;
+}
+
+
+
+
+
+/* TOOL TIPS */
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    top: 125%;
+    left: 50%;
+    margin-left: -60px;
+
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color:  transparent transparent #555 transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* PROGRESS BAR */
+.ui-progressbar {
+    position: relative;
+    height: 1.5em;
+    margin: .5em 2em;
+    background: #999;
+    border: 1px solid black;
+  }
+
+.progressText {
+    position: absolute;
+    left: 10%;
+    bottom: 10%;
+    font-weight: bold;
+    font-family: 'Open Sans Condensed', sans-serif;
+  }
+
+.ui-progressbar-value{
+    background: #7cd85b;
+    border-right: 8px solid #5D85FF;
+}
+
+.ui-widget{
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button, select{
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+/* ACCORDIAN STYLING */
+
+#stepAccordian{
+    padding: .2em;
+    font-size: 1em;
+}
+
+.ui-accordion .ui-accordion-content{
+    padding: .5em;
+    border-radius: 0 0 5px 5px;
+}
+
+.ui-accordion-header-active{
+    border: none;
+}
+
+.sortable-placeholder {
+	height: 2em;
+	line-height: 2em;
+    border: 1px solid #666;
+    margin: .2em;
+	background: #F6FF93;
+}
+
+.availOp{
+    border-radius: 3px;
+    border: 1px solid #5C5C5C;
+    background-color: #FFC37D;
+    font-size: 1em;
+    color: black;
+    padding: .2em .5em;
+    margin: .2em 0;
+    text-align: left;
+}
