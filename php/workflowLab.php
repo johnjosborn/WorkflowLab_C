@@ -34,21 +34,19 @@ echo <<<_FixedHTML
 </head>
 <body> 
     <div id='container'>
-    <div id='controls'>
-        <div id='controlHide' class='point'><img src='../media/hide.png'></div>
-        <div id='wfTitle'><img src='../media/logo6.png' class='img1'></div>
-        <div id='controlAccordian'>
-        </div>
-    </div>
-    <div id="content">
-        <div id='controlShow'  class='point'><img src='../media/show.png'></div> 
-        <div id='contentContainer'>
-            <div id='contentUpdate'>
-                
+        <div id='controls'>
+            <div id='controlHide' class='point'><img src='../media/hide.png'></div>
+            <div id='wfTitle'><img src='../media/logo6.png' class='img1'></div>
+            <div id='controlAccordian'>
             </div>
         </div>
-    </div>
-        
+        <div id="content">
+            <div id='controlShow'  class='point'><img src='../media/show.png'></div> 
+            <div id='contentContainer'>
+                <div id='contentUpdate'>
+                    
+                </div>
+            </div>
         </div>
     </div>
     <script>
@@ -125,6 +123,8 @@ echo <<<_FixedHTML
             
             if (cur != "h4"){
                 $("#currentSelection").val("h4");
+                getUsList("X");
+                $("#radio-us-active").css("background", "#E26600");
             }
         }
 
@@ -1217,41 +1217,86 @@ echo <<<_FixedHTML
 
             if (confirm('PERMANENTLY delete this Step?')) {
                 
-                                if (confirm('Confirm Step deletion.')) {
-                                    
-                                    var opID = document.getElementById("opID").value
-                                    
-                                        $.ajax({
-                                            type: 'POST',
-                                            url: 'fp/op_delete.php',
-                                            dataType: 'html',
-                                            data: {
-                                                op_ID: opID
-                                            },
-                                            success: function (html) {
-                                                if (html == 1){
-                                                    alert("Error deleting workflow.");
-                                                } else if (html == 2){
-                                                    alert("Error sending data.");
-                                                } else if (html == 3){
-                                                    alert("Ownership Error.");
-                                                } else {
-                                                    updateOpList(); 
-                                                    h3();                                                  
-                                                }
-                                            },
-                                            error: function(XMLHttpRequest, textStatus, errorThrown) { 
-                                                alert("error");
-                                            }
-                                        });
-                
+                if (confirm('Confirm Step deletion.')) {
+                    
+                    var opID = document.getElementById("opID").value
+                    
+                        $.ajax({
+                            type: 'POST',
+                            url: 'fp/op_delete.php',
+                            dataType: 'html',
+                            data: {
+                                op_ID: opID
+                            },
+                            success: function (html) {
+                                if (html == 1){
+                                    alert("Error deleting workflow.");
+                                } else if (html == 2){
+                                    alert("Error sending data.");
+                                } else if (html == 3){
+                                    alert("Ownership Error.");
                                 } else {
-                                    
+                                    updateOpList(); 
+                                    h3();                                                  
                                 }
-                            } else {
-                                
+                            },
+                            error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                                alert("error");
                             }
+                        });
+
+                } else {
+                    
+                }
+            } else {
+                                
+            }
         }
+
+        function getUsList(userType){
+            
+            $.ajax({
+                type: 'POST',
+                url: 'fp/us_getList.php',   
+                dataType: 'html',
+                data: {
+                   user_type : userType
+                },
+                success: function (html) {
+                    $("#contentUpdate").hide().fadeIn("slow").html(html);
+                    $("#usList").tablesorter();
+                    $('#stepSelection').val(searchType);
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                    $("#contentUpdate").hide().fadeIn("slow").html("error loading user data.");
+                }
+            });
+        }
+
+        function editUs(usID){
+
+            $.ajax({
+                type: 'POST',
+                url: 'fp/us_mod_detail.php',   
+                dataType: 'html',
+                data: {
+                   us_id : usID
+                },
+                success: function (html) {
+                    $("#activeControl").show().html(html);
+                    hActive();
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                    $("#contentUpdate").hide().fadeIn("slow").html("error loading user details.");
+                }
+            });
+        }
+
+        $(document).on("input", "#usContainer input.textTableInput", function () {
+            this.style.backgroundColor = '#FDF19D';
+            $('.editH1').show();
+            $('.editH2').hide();
+        });
 
     </script>
 </body>

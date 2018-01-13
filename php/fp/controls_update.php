@@ -33,7 +33,7 @@ if($result){
 
 $itemSelect .= "</select></div>";
 
-//get list of items for select box
+//get list of items by group for select box
 $groupSelect = "<div class='inputControl'><select class='inputField controlSelect' id='wfByGroup'><option disabled selected>Select Group</option>";
 
 $sql = "SELECT DISTINCT WFL_group
@@ -82,7 +82,7 @@ $ctrlWf = "
         <input type='hidden' id='wfSelection' value='Active'>
     </div>";
 
-    //get list of items for select boxes
+//get list of items for select boxes
 $stepTypes = "<div class='inputControl'><select class='inputField controlSelect' id='opByType'><option disabled selected>Select Type</option>";
 
 $sql = "SELECT DISTINCT OPS_type
@@ -126,6 +126,18 @@ $ctrlStep = "
         <input type='hidden' id='stepSelection' value='Active'>
     </div>";
 
+
+$ctrlUsr = "
+    <div onclick='newUser()' class='selectRadioNew'>+ New User</div>
+    <hr>
+    <div class='listLabel'>USERS BY FUNCTION</div>
+    <div id='radio-us-active' onclick='getUsList(\"X\")' class='selectRadio'>All Active Users</div>
+    <div onclick='getUsList(\"30\")' class='selectRadio'>Admins</div>
+    <div onclick='getUsList(\"20\")' class='selectRadio'>Power Users</div>
+    <div onclick='getUsList(\"10\")' class='selectRadio'>Standard Users</div>
+    <div onclick='getUsList(\"0\")' class='selectRadio'>Inactive</div>
+    ";
+
 $controls = "
     <div class='accd_header accd_header_selected' onclick='h0()'>
         Home
@@ -149,7 +161,7 @@ $controls = "
         Users
     </div>
     <div class='accd_content' id='c4' hidden>
-        Content 4
+        $ctrlUsr
     </div>
     <input type='hidden' id='currentSelection' value=''>";
 
