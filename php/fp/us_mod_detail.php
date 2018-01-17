@@ -30,7 +30,7 @@ if (isset($_POST['us_id'])){
 
     //Query Workflow
 
-    $sql = "SELECT USR_id, USR_name, USR_perm, USR_accessDate
+    $sql = "SELECT USR_id, USR_name, USR_perm, USR_accessDate, USR_email, USR_phone
             FROM USR
             WHERE USR_CUS_id = '$custID' AND USR_id = '$usID'";
         
@@ -47,7 +47,8 @@ if (isset($_POST['us_id'])){
                 $usName = $row['USR_name'];
                 $usType = $row['USR_perm'];
                 $usLA = $row['USR_accessDate'];
-
+                $usMail = $row['USR_email'];
+                $usPhone = $row['USR_phone'];
             }
        
 
@@ -84,6 +85,12 @@ if (isset($_POST['us_id'])){
                         <div class='labelDiv'>Name</div>
                         <div class='dataInputDiv'>
                             <input id='usName' value='$usName' class='textTableInput'></div>
+                        <div class='labelDiv'>email</div>
+                        <div class='dataInputDiv'>
+                            <input id='usMail' value='$usMail' class='textTableInput'></div>
+                        <div class='labelDiv'>phone</div>
+                        <div class='dataInputDiv'>
+                            <input id='usPhone' value='$usPhone' class='textTableInput'></div>
                         <div class='labelDiv'>Access Level</div>
                         <div class='dataInputDiv'>$statusSelect</div>                        
                         <div class='scaleText1 alignRight'>

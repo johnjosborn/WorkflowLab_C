@@ -1292,11 +1292,105 @@ echo <<<_FixedHTML
             });
         }
 
+        function saveUsDetail(usrID){
+
+            alert(usrID);
+
+            var usrName = $('#usName').val();
+            var usrEmail = $('#usMail').val();   
+            var usrPhone = $('#usPhone').val();
+            var usrAccess = $('#usPermStore').val();
+
+            $.ajax({
+                type: 'POST',
+                url: 'fp/us_save_user_change.php',   
+                dataType: 'html',
+                data: {
+                    usr_Name : usrName,
+                    usr_ID : usrID,
+                    usr_Email : usrEmail,
+                    usr_Phone : usrPhone,
+                    usr_Access : usrAccess
+                },
+                success: function (html) {
+                    if (html == 1){
+                        alert("Error updating data.");
+                    } else if (html == 2){
+                        alert("Error sending data.");
+                    } 
+                    $('.editH1').hide();
+                    $('.editH2').show();
+                    getUsList("X");
+                }
+
+            });
+        }
+
         $(document).on("input", "#usContainer input.textTableInput", function () {
             this.style.backgroundColor = '#FDF19D';
             $('.editH1').show();
             $('.editH2').hide();
         });
+
+        function usPermChange(e){
+            var thisStatus = e.options[e.selectedIndex].value;
+            $('#usPermStore').val(thisStatus);
+            e.style.backgroundColor = '#FDF19D';
+            $('.editH1').show();
+            $('.editH2').hide();
+        }
+
+        function newUser(){
+
+            $.ajax({
+                type: 'POST',
+                url: 'fp/us_new.php',   
+                dataType: 'html',
+                success: function (html) {
+                    $("#activeControl").show().html(html);
+                    hActive();
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                    $("#contentUpdate").hide().fadeIn("slow").html("error loading step details.");
+                }
+            });
+        }
+
+        function saveNewUser(){
+
+            alert("New User");
+            
+            var usrName = $('#usName').val();
+            var usrEmail = $('#usMail').val();   
+            var usrPhone = $('#usPhone').val();
+            var usrAccess = $('#usPermStore').val();
+
+            $.ajax({
+                type: 'POST',
+                url: 'fp/us_save_new.php',   
+                dataType: 'html',
+                data: {
+                    usr_Name : usrName,
+                    usr_ID : usrID,
+                    usr_Email : usrEmail,
+                    usr_Phone : usrPhone,
+                    usr_Access : usrAccess
+                },
+                success: function (html) {
+                    if (html == 1){
+                        alert("Error updating data.");
+                    } else if (html == 2){
+                        alert("Error sending data.");
+                    } else {
+                        getUsList("X");
+                        h4();  
+                    }
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                    $("#contentUpdate").hide().fadeIn("slow").html("error loading step details.");
+                }
+            });
+        }
 
     </script>
 </body>
