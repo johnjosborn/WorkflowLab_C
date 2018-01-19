@@ -74,10 +74,8 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
             $result = sendEmail($email, $message);
             
             echo $result;
-        } 
-        
+        }    
     }
-
 }
 
 echo $fail;

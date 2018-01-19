@@ -1365,6 +1365,8 @@ echo <<<_FixedHTML
             var usrPhone = $('#usPhone').val();
             var usrAccess = $('#usPermStore').val();
 
+            //TODO validate inputs
+
             $.ajax({
                 type: 'POST',
                 url: 'fp/us_save_new.php',   

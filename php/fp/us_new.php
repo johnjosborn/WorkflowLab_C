@@ -43,7 +43,7 @@ $output = "
                         <div class='labelDiv'>Access Level</div>
                         <div class='dataInputDiv'>$statusSelect</div>                        
                         <div class='scaleText1 alignRight'>
-                            <input type='button' class='button buttonGreen editH1' onclick='saveNewUser()' value='Save' hidden>
+                            <input type='button' class='button buttonGreen editH1' onclick='saveNewUser()' value='Send Activation Email' hidden>
                             <input type='button' class='button buttonGray editH1' onclick='h4()' value='Cancel'>
                         </div>
                     </div>
