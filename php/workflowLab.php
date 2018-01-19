@@ -1358,27 +1358,26 @@ echo <<<_FixedHTML
 
         function saveNewUser(){
 
-            alert("New User");
             
             var usrName = $('#usName').val();
             var usrEmail = $('#usMail').val();   
             var usrPhone = $('#usPhone').val();
             var usrAccess = $('#usPermStore').val();
-
+            
             //TODO validate inputs
-
+            
             $.ajax({
                 type: 'POST',
                 url: 'fp/us_save_new.php',   
                 dataType: 'html',
                 data: {
                     usr_Name : usrName,
-                    usr_ID : usrID,
                     usr_Email : usrEmail,
                     usr_Phone : usrPhone,
                     usr_Access : usrAccess
                 },
                 success: function (html) {
+                    alert(html);
                     if (html == 1){
                         alert("Error updating data.");
                     } else if (html == 2){
